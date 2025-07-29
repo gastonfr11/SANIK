@@ -785,3 +785,8 @@ section:first-of-type {
     margin-top: 2.5rem;
   }
 }
+
+.thumbs img.active-thumb {
+  border: 2.5px solid var(--color-accent);
+  filter: brightness(1.1);
+}

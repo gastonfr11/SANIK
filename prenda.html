@@ -125,5 +125,31 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Selecciona el contenedor de la galería
+  const gallery = document.querySelector('.product-gallery');
+  if (!gallery) return;
+
+  const mainImg = gallery.querySelector('.main-image');
+  const thumbs = gallery.querySelectorAll('.thumbs img');
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', function () {
+      // Guarda la imagen actual (opcional, para efecto)
+      const currentSrc = mainImg.src;
+      // Cambia la imagen principal por la de la miniatura
+      mainImg.src = this.src;
+      // Opcional: efecto sutil de fade
+      mainImg.style.opacity = 0.5;
+      setTimeout(() => mainImg.style.opacity = 1, 150);
+
+      // Si querés resaltar la miniatura seleccionada:
+      thumbs.forEach(img => img.classList.remove('active-thumb'));
+      this.classList.add('active-thumb');
+    });
+  });
+});
+</script>
 </body>
 </html>
