@@ -1,0 +1,653 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Aileron:ital,wght@0,400;1,400&display=swap');
+/* ===== Reset & Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+   --sidebar-duration: 0.6s;
+  --sidebar-ease: ease;
+  --color-bg: #EFE8DD;
+  --color-text: #1A1A1A;
+  --color-accent: #6E1822;
+  --color-muted: #2B2B2B;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  transition: margin-left var(--sidebar-duration) var(--sidebar-ease);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 { font-family: 'Aileron', sans-serif; font-weight: 600; }
+
+em { font-style: italic; }
+
+/* ===== Container ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  margin-top: 0;
+}
+
+/* ===== Navbar ===== */
+
+.nav-options {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 1100; /* encima del resto */
+}
+
+.nav-options li a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-options li a:hover {
+  color: var(--color-bg);
+  background-color: var(--color-accent);
+  border-radius: 0.25rem;
+}
+
+/* En pantallas pequeñas puedes ocultarlos si deseas */
+@media (max-width: 768px) {
+  .nav-options {
+    display: none;
+  }
+}
+
+.navbar {
+  background-color: var(--color-bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  top: 0;
+  z-index: 100;
+  min-height: 60px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;    /* antes 1rem */
+  padding-bottom: 1rem; /* antes 1rem */
+}
+
+.navbar .logo {
+  font-family: 'Poppins';   /*ASI O POPINS?*/
+  font-size: clamp(1rem, 4vw, 1rem);
+  color: var(--color-text);
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  white-space: normal;
+  max-width: 90vw; /* que no desborde */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;    /* NUNCA corta palabras en el medio */
+  overflow-wrap: anywhere; /* Permite cortar en <wbr> */
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  .navbar .logo {
+    white-space: normal;
+    text-align: center;
+    font-size: clamp(1rem, 8vw, 1rem);
+    max-width: 95vw;
+    padding: 0 0.5rem;
+  }
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;              /* ancho de la sidebar */
+  height: 100vh;             /* toda la altura de la ventana */
+  background-color: var(--color-bg);
+  padding-top: 5rem;         /* deja espacio para el header */
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  transform: translateX(-100%);  /* oculta fuera de pantalla */
+  transition: transform var(--sidebar-duration) var(--sidebar-ease);
+  z-index: 1000;
+  align-items: center;
+  
+}
+
+.navbar .nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+.navbar .nav-links a:hover {
+  color: var(--color-accent);
+}
+
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.navbar .nav-links.show {
+position: fixed;
+display: flex;
+flex-direction: column;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(0);
+}
+
+body.sidebar-open {
+margin-left: 180px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;      /* ocupa toda la altura del viewport */
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* para asegurarnos de que llena todo el contenedor */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;        /* detrás del contenido */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;      /* para que flex centré verticalmente */
+  padding: 0 1rem;   /* un poco de espacio lateral si quieres */
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-bg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-bg);
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-muted);
+  color: var(--color-bg);
+}
+
+/* Hero: imagen de logo y botón alineados verticalmente */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0; /* sin espacio extra arriba */
+}
+
+.hero-logo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0rem;
+}
+
+.hero-btn {
+  margin-top: 0; /* sin espacio extra arriba del botón */
+  font-size: 1.1rem;
+  padding: 0.85rem 2.2rem;
+}
+
+
+/* ===== Sections ===== */
+section {
+  padding: 4rem 0;
+}
+
+section:first-of-type {
+  padding-top: 2rem;
+}
+
+.about-us,
+.products {
+  text-align: center;
+}
+
+.about-us h2,
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Layout especial para Productos Destacados ===== */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* ===== Tarjeta base ===== */
+.product-card {
+  background-color: var(--color-bg);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Contenedor de imagen ===== */
+.product-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Imagen cubre el contenedor */
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Proporciones y anchuras iniciales ===== */
+.product-card.wide {
+  flex: 0 0 calc(66.66% - 1.5rem);
+}
+.product-card.square {
+  flex: 0 0 calc(33.33% - 1.5rem);
+}
+
+/* Mantener proporciones dentro de la imagen */
+.product-card.wide .product-image {
+  aspect-ratio: 16 / 9;
+}
+.product-card.square .product-image {
+  aspect-ratio: 1 / 1;
+}
+
+/* ===== Responsive: pantallas medianas ===== */
+@media (max-width: 1024px) {
+  .product-card.wide {
+    flex: 0 0 calc(100% - 1.5rem);
+  }
+  .product-card.square {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+}
+
+/* ===== Responsive: pantallas pequeñas ===== */
+@media (max-width: 600px) {
+  .product-card {
+    flex: 0 0 100%;
+  }
+}
+
+
+/* ===== Contenido debajo de la imagen ===== */
+.product-content {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* asegura que el contenido ocupe todo el resto de la tarjeta */
+}
+
+/* Título */
+.product-content h3 {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Precio */
+.product-content .price {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Botón al final, con margen automático arriba */
+.product-content .btn {
+  margin-top: auto;
+}
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: var(--color-muted);
+  color: var(--color-bg);
+  padding: 2rem 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-nav a,
+.social-media a {
+  color: var(--color-bg);
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover,
+.social-media a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer p {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ===== Reveal on Scroll ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Cuando agregamos .active, se muestra */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Efecto hover “bounce” letra a letra ===== */
+
+/* 1) Cada letra como inline-block para poder transformarla */
+.logo span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* 2) Definimos la animación */
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-1.5px); }
+}
+
+/* 3) Al pasar el mouse por encima de cada span */
+.logo span:hover {
+  animation: bounce 0.4s ease;
+}
+
+/* Contact bar lateral, mismo comportamiento: hover/click para expandir */
+.contact-bar {
+  position: fixed;
+  top: 35%;
+  right: 0;
+  z-index: 1500;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+/* Botón flotante */
+.contact-btn {
+  background: var(--color-accent); /* Podés usar tu --color-accent si querés */
+  color: var(--color-bg);
+  padding: 0.75rem;
+  border-radius: 50% 0 0 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-muted);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+/* Oculta checkbox */
+.contact-bar input[type="checkbox"] {
+  display: none;
+}
+
+/* Social buttons ocultos por defecto */
+.social-buttons.contact-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-muted);
+  box-shadow: 0px 0px 15px var(--color-muted);
+  padding: 15px 10px;
+  border-radius: 5em 0 0 5em;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 0.4s, opacity 0.4s;
+  pointer-events: none;
+  margin: 0;
+}
+
+.contact-items {
+  margin-right: 56px;  /* el ancho del botón más un pequeño gap */
+  transition: 
+    max-width 0.4s,
+    opacity 0.4s,
+    margin-right 0.3s;
+}
+
+/* Mostrar al hover/click */
+.contact-bar:hover .contact-items,
+.contact-bar input[type="checkbox"]:checked ~ .contact-items {
+  max-width: 380px;
+  opacity: 1;
+  pointer-events: auto;
+  margin-right: 0;
+}
+
+.contact-bar:hover .contact-btn,
+.contact-bar input[type="checkbox"]:checked ~ .contact-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+/* Estilos aadium */
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: var(--color-bg);
+  box-shadow: 0px 0px 4px var(--color-accent);
+  transition: 0.3s;
+  position: relative;
+  text-decoration: none;
+}
+
+.social-button:hover {
+  background-color: var(--color-bg);
+  box-shadow: 0px 0px 6px 3px var(--color-accent);
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 22px;
+  width: 22px;
+}
+
+.facebook { background-color: #3b5998; }
+.facebook svg { fill: var(--color-bg); }
+.facebook:hover svg { fill: #3b5998; background: #fff; }
+
+.whatsapp {
+  background-color: #25D366;
+}
+.whatsapp svg {
+  fill: var(--color-bg);
+}
+.whatsapp:hover svg {
+  fill: #25D366;
+  background: var(--color-bg);
+}
+
+.social-button.mail {
+  /* Degradé celeste igual al del SVG */
+  background: linear-gradient(135deg, #1ac8fc 0%, #1bb6fa 26%, #1c86f5 77%, #1d70f2 100%);
+  /* Tamaño mayor para el logo */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 6px 3px var(--color-accent);
+}
+.social-button.mail:hover {
+  background: var(--color-bg);
+  box-shadow: var(--color-accent);
+}
+.social-button.mail:hover .icon-mail path,
+.social-button.mail:hover .icon-mail rect {
+  stroke: #1d70f2;
+}
+
+.icon-mail {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .social-button.mail {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-mail {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
+.instagram { background-color: #c13584; }
+.instagram svg { fill: var(--color-bg); }
+.instagram:hover svg { fill: #c13584; background: #fff; }
+
+/* Responsive: barra inferior en mobile */
+@media (max-width: 600px) {
+  .contact-bar {
+    top: unset;
+    bottom: 1rem;
+  }
+  .social-buttons {
+    padding: 10px 5px;
+  }
+}

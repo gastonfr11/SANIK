@@ -1,0 +1,16 @@
+Catálogo de productos (tipos de prendas, talles, variantes).
+Formas de pago (tarjeta, transferencia, PayPal, etc.).
+Logística de envíos (métodos, zonas de cobertura, costos).
+Necesidades de administración (panel para agregar/editar productos, ver pedidos).
+Me imagino una estructura: HOME, WHO WE ARE, 
+practicidad
+separar prendas por colecciones
+animaciones al desplegar nav-var
+video al inicio en bucle
+distintos tipos de tamaño de imagenes dependiendo la ropa
+https://www.vsartoristore.com/
+https://serenahotel.com.uy/
+mucha animacion con javascript
+
+Primera Iteración : front como catalogo
+Segunda Iteración: Integrar pagos

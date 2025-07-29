@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sanik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo">STAND OUT<wbr> WHEREVER<wbr> YOU<wbr> GO</a>
+      <ul class="nav-options">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+      <ul class="nav-links">
+        <li><a href="prenda.html">Prenda 1</a></li>
+        <li><a href="prenda.html">Prenda 2</a></li>
+        <li><a href="prenda.html">Prenda 3</a></li>
+        <li><a href="prenda.html">Prenda 4</a></li>
+        <li><a href="prenda.html">Prenda 5</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Abrir menú">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header id="home" class="hero">
+  <video class="hero-video" src="C:\Users\Gastón\Desktop\Projects\SANIK STYLE\assets\videos\855563-hd_1920_1080_24fps.mp4"
+         autoplay muted loop playsinline></video>
+  <div class="container hero-content">
+    <img src="assets/imagenes/sanik.png" alt="SANIK STYLE" class="hero-logo">
+    <a href="#products" class="btn hero-btn">SHOP NOW</a>
+  </div>
+</header>
+
+
+  <!-- PRODUCTS (ejemplo) -->
+ <section id="products" class="products reveal">
+  <div class="container">
+    <h2>Productos Destacados</h2>
+    <div class="product-grid">
+
+      <!-- 1ª tarjeta: RECTÁNGULO acostado -->
+      <article class="product-card wide">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Conjunto</h3>
+          <p class="price">$49.99 USD</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </article>
+
+      <!-- 2ª tarjeta: CUADRADO -->
+      <article class="product-card square">
+        <div class="product-image">
+          <img src="assets/imagenes/prenda1.jpg" alt="prenda1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$29.99 USD</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </article>
+
+      <!-- 3ª tarjeta: CUADRADO -->
+      <article class="product-card square">
+        <div class="product-image">
+          <img src="assets/imagenes/prenda2.jpg" alt="prenda2">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$29.99 USD</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </article>
+
+      <!-- 4ª tarjeta: CUADRADO -->
+      <article class="product-card square">
+        <div class="product-image">
+          <img src="assets/imagenes/prenda3.jpg" alt="prenda3">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$29.99 USD</p>
+          <a href="#" class="btn">Comprar</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="container footer-content">
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contacto</a>
+      </div>
+      <div class="social-media">
+        <a href="https://www.instagram.com/sanikstyle/" target="_blank" rel="noopener">Instagram</a>
+        <!-- Otras redes sociales -->
+      </div>
+      <p class="copyright">
+        &copy; 2025 SANIK STYLE. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Barra de contacto lateral flotante -->
+<!-- Contact Bar lateral (hover/click para expandir) con botones UiVerse -->
+<div class="contact-bar">
+  <input type="checkbox" id="contact-toggle" />
+  <label for="contact-toggle" class="contact-btn" title="Contacto">
+☰
+  </label>
+  <div class="social-buttons contact-items">
+    <a href="https://wa.me/59899123456" class="social-button whatsapp" target="_blank" rel="noopener" title="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+<path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+</svg>
+    </a>
+    <!-- Mail -->
+    <a href="mailto:info@sanikstyle.com.uy" class="social-button mail" target="_blank" rel="noopener" title="Mail">
+  <svg viewBox="0 0 48 48" class="icon-mail">
+    <path d="M8 12h32a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z" fill="none"/>
+    <path d="M12 16l12 9 12-9" stroke="#fff" stroke-width="2.5" fill="none"/>
+    <rect x="8" y="12" width="32" height="24" rx="4" fill="none" stroke="#fff" stroke-width="2.5"/>
+  </svg>
+</a>
+
+    </a>
+    <a href="https://facebook.com/sanikstyle" class="social-button facebook" target="_blank" rel="noopener" title="Facebook">
+      <!-- Facebook SVG -->
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310"><g id="XMLID_834_"><path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
+    c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
+    V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
+    C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
+    c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"></path></g></svg>
+    </a>
+    <a href="https://instagram.com/sanikstyle" class="social-button instagram" target="_blank" rel="noopener" title="Instagram">
+      <!-- Instagram SVG -->
+      <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="Page-1" stroke="none" stroke-width="1"><g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)"><g id="icons" transform="translate(56.000000, 160.000000)"><path d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792"></path></g></g></g></svg>
+    </a>
+  </div>
+</div>
+
+
+</body>
+</html>
