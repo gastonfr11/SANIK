@@ -20,10 +20,10 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-muted);
+  color: var(--color-bg);
   line-height: 1.6;
-  background-color: var(--color-bg);
+  background-color: var(--color-muted);
   transition: margin-left var(--sidebar-duration) var(--sidebar-ease);
 }
 
@@ -58,7 +58,7 @@ em { font-style: italic; }
 }
 
 .nav-options li a {
-  color: var(--color-text);
+  color: var(--color-bg);
   text-decoration: none;
   font-weight: 500;
   padding: 0.25rem 0.5rem;
@@ -79,7 +79,7 @@ em { font-style: italic; }
 }
 
 .navbar {
-  background-color: var(--color-bg);
+  background-color: var(--color-muted);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: relative;
   top: 0;
@@ -98,7 +98,7 @@ em { font-style: italic; }
 .navbar .logo {
   font-family: 'Poppins';   /*ASI O POPINS?*/
   font-size: clamp(1rem, 4vw, 1rem);
-  color: var(--color-text);
+  color: var(--color-bg);
   text-decoration: none;
   position: absolute;
   left: 50%;
@@ -135,7 +135,7 @@ em { font-style: italic; }
   left: 0;
   width: 180px;              /* ancho de la sidebar */
   height: 100vh;             /* toda la altura de la ventana */
-  background-color: var(--color-bg);
+  background-color: var(--color-muted);
   padding-top: 5rem;         /* deja espacio para el header */
   box-shadow: 2px 0 6px rgba(0,0,0,0.1);
   transform: translateX(-100%);  /* oculta fuera de pantalla */
@@ -146,7 +146,7 @@ em { font-style: italic; }
 }
 
 .navbar .nav-links a {
-  color: var(--color-text);
+  color: var(--color-bg);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -314,6 +314,7 @@ section:first-of-type {
 /* ===== Tarjeta base ===== */
 .product-card {
   background-color: var(--color-bg);
+  color: var(--color-muted);
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -398,7 +399,7 @@ section:first-of-type {
 
 /* ===== Footer ===== */
 .site-footer {
-  background-color: var(--color-muted);
+  background-color: var(--color-text);
   color: var(--color-bg);
   padding: 2rem 0;
 }
