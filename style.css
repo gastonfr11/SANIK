@@ -163,6 +163,7 @@ em { font-style: italic; }
 
 .nav-toggle {
   display: block;
+  color: var(--color-bg);
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -395,6 +396,46 @@ section:first-of-type {
 .product-content .btn {
   margin-top: auto;
 }
+
+.about-us {
+  background: var(--color-muted);
+  color: var(--color-bg);
+  padding: 4rem 0 4rem 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.about-logo {
+  max-width: 180px;
+  border-radius: 1rem;
+  background: var(--color-muted);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  max-width: 500px;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .about-logo {
+    margin-bottom: 0.5rem;
+  }
+}
+
 
 
 /* ===== Footer ===== */
@@ -653,6 +694,8 @@ section:first-of-type {
   }
 }
 
+
+
 /* ======== Página de detalle de producto ======== */
 
 .product-detail {
@@ -790,4 +833,80 @@ section:first-of-type {
 .thumbs img.active-thumb {
   border: 2.5px solid var(--color-accent);
   filter: brightness(1.1);
+}
+
+.product-carousel {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+  background: var(--color-bg);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll-left 32s linear infinite;
+}
+
+.products-carousel-section {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg);
+  padding: 0;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: 'Aileron', sans-serif;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* El valor debe ser igual al ancho total de los productos repetidos */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa animación al hacer hover sobre cualquier producto */
+.product-carousel:hover .carousel-track,
+.product-card:hover ~ .carousel-track,
+.carousel-track:hover {
+  animation-play-state: paused !important;
+}
+
+/* Resalte de la tarjeta al hacer hover */
+.product-card {
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.product-card:hover {
+  transform: scale(1.05) translateY(-6px);
+  box-shadow: 0 4px 22px 0 rgba(110, 24, 34, 0.16), 0 1.5px 12px 0 var(--color-accent);
+  z-index: 10;
+}
+
+/* Ajustes visuales */
+.product-card.square {
+  min-width: 230px;
+  max-width: 250px;
+  aspect-ratio: 1/1.16;
+}
+
+/* Responsive: menos productos visibles, barra scrolleable */
+@media (max-width: 700px) {
+  .carousel-track {
+    gap: 1rem;
+    animation-duration: 20s;
+  }
+  .product-card.square {
+    min-width: 68vw;
+    max-width: 74vw;
+  }
 }
