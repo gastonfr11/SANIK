@@ -699,8 +699,9 @@ section:first-of-type {
 /* ======== Página de detalle de producto ======== */
 
 .product-detail {
-  background: var(--color-bg);
+  background: var(--color-muted);
   padding: 4rem 0 2rem 0;
+  color: var(--color-text);
 }
 
 .product-container {
@@ -714,7 +715,7 @@ section:first-of-type {
 .product-gallery {
   flex: 1 1 340px;
   max-width: 440px;
-  background: #fff;
+  background: var(--color-bg);
   border-radius: 0.8rem;
   box-shadow: 0 4px 14px rgba(0,0,0,0.10);
   padding: 2rem 1.5rem 1rem 1.5rem;
@@ -748,7 +749,7 @@ section:first-of-type {
   border-radius: 0.3rem;
   border: 1.5px solid #eee;
   cursor: pointer;
-  background: #fafafa;
+  background: var(--color-bg);
   transition: border 0.2s;
 }
 
@@ -762,7 +763,7 @@ section:first-of-type {
   flex: 1 1 300px;
   min-width: 240px;
   max-width: 410px;
-  background: #fff;
+  background: var(--color-bg);
   border-radius: 0.8rem;
   box-shadow: 0 4px 14px rgba(0,0,0,0.07);
   padding: 2rem 1.8rem 1.5rem 1.8rem;
@@ -909,4 +910,16 @@ section:first-of-type {
     min-width: 68vw;
     max-width: 74vw;
   }
+}
+
+.catalogo-section {
+  padding: 4rem 0;
+  background: var(--color-muted);
+  min-height: 100vh;
+}
+.catalogo-section h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.04em;
 }
