@@ -158,7 +158,7 @@ em { font-style: italic; }
 
 
 .navbar .nav-links a:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .nav-toggle {
@@ -186,6 +186,128 @@ flex-direction: column;
 body.sidebar-open {
 margin-left: 180px;
 }
+
+.sidebar-menu {
+  width: 220px;
+  background: var(--color-muted);
+  color: var(--color-bg);
+  border-radius: 0 1.3rem 1.3rem 0;
+  padding: 2.3rem 0 1.2rem 0.5rem;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1101;
+  box-shadow: 3px 0 18px 0 rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 0.3rem;
+}
+
+.menu-link {
+  display: block;
+  color: var(--color-bg);
+  text-decoration: none;
+  font-size: 1.18rem;
+  font-weight: 600;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.7rem;
+  transition: background 0.19s, color 0.16s;
+}
+.menu-link:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.has-submenu .submenu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.13rem;
+  font-weight: 500;
+  padding: 0.7rem 1.1rem 0.7rem 1.1rem;
+  border-radius: 0.7rem;
+  background: none;
+  color: var(--color-bg);
+  transition: background 0.18s;
+}
+.has-submenu .submenu-header:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+.submenu-arrow {
+  transition: transform 0.18s;
+  margin-left: 0.9rem;
+  font-size: 1.17rem;
+}
+.has-submenu.open .submenu-arrow {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: none;
+  background: var(--color-muted);
+  margin-top: 0.09rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0 0 0.7rem 0.7rem;
+  padding-left: 1.2rem;
+}
+.has-submenu.open .submenu {
+  display: block;
+  animation: fadein 0.24s;
+}
+.submenu li a {
+  color: var(--color-bg);
+  padding: 0.35rem 0;
+  display: block;
+  font-size: 1.02rem;
+  text-decoration: none;
+  transition: color 0.13s;
+}
+.submenu li a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+/* PREVENTA destacado */
+.menu-item.preventa .menu-link {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  margin-top: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .sidebar-menu {
+    width: 92vw;
+    min-width: 0;
+    border-radius: 0 0 1.3rem 1.3rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3000;
+    height: 100vh;
+    padding: 1rem 0.7rem 1.2rem 0.2rem;
+  }
+}
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-8px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+
 
 /* ===== Hero Section ===== */
 .hero {
@@ -400,39 +522,81 @@ section:first-of-type {
 .about-us {
   background: var(--color-muted);
   color: var(--color-bg);
-  padding: 4rem 0 4rem 0;
+  padding: 0.7rem 0 1rem 0; /* arriba 0.7rem, abajo 1rem */
 }
 
-.about-content {
-  display: flex;
+
+.about-container {
+  display: grid;
+  grid-template-columns: 170px 1fr; /* Logo fijo, texto ocupa el resto */
   align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+  justify-content: start; /* Alinea el contenido al principio del contenedor */
+  max-width: 980px;
+  margin: 0 auto;
+  gap: 4rem; /* Espacio horizontal entre logo y texto */
+  width: 100%;
+  min-height: 110px;
 }
 
+
+.about-logo-wrap {
+  display: flex;
+  justify-content: flex-end; /* o center si querés el logo centrado en su columna */
+  align-items: center;
+  height: 100%;
+}
 .about-logo {
-  max-width: 180px;
+  max-width: 120px;
+  width: 100%;
   border-radius: 1rem;
   background: var(--color-muted);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
-.about-text {
-  max-width: 500px;
-  font-size: 1.12rem;
-  line-height: 1.7;
+.about-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 560px;  /* Para que no se haga tan ancho */
+  margin-left: auto; /* Lo empuja a la derecha si hay espacio extra */
+}
+
+.about-text-wrap h2 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.about-text-wrap p {
+  font-size: 0.97rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    gap: 2rem;
+    max-width: 97vw;
+  }
 }
 
 @media (max-width: 700px) {
-  .about-content {
+  .about-container {
+    display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.3rem;
+    align-items: center;
     text-align: center;
   }
-  .about-logo {
-    margin-bottom: 0.5rem;
+  .about-logo-wrap {
+    justify-content: center;
+    width: 100%;
+  }
+  .about-text-wrap {
+    align-items: center;
+    text-align: center;
+    max-width: 95vw;
   }
 }
 
@@ -865,6 +1029,148 @@ section:first-of-type {
   font-size: 2rem;
   font-family: 'Aileron', sans-serif;
 }
+
+.carousel-wrapper {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background: var(--color-muted);
+  padding: 2.3rem 0 2.7rem 0;
+  overflow: hidden;
+}
+
+.carousel-track-horizontal {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;  /* Firefox oculta scroll */
+  -ms-overflow-style: none;
+  width: 100%;
+}
+.carousel-track-horizontal::-webkit-scrollbar {
+  display: none; /* Chrome, Safari oculta scroll */
+}
+
+.product-card.square {
+  min-width: 230px;
+  max-width: 250px;
+  aspect-ratio: 1/1.16;
+  flex-shrink: 0;
+}
+
+.carousel-arrow {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.7rem;
+  position: absolute;
+  top: 50%;
+  z-index: 11;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.89;
+  transition: background 0.15s, opacity 0.17s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.carousel-arrow:hover { opacity: 1; background: #4b0d14; }
+.carousel-arrow.left  { left: 0.6rem; }
+.carousel-arrow.right { right: 0.6rem; }
+
+/* Responsive: más chicas las flechas y tarjetas */
+@media (max-width: 700px) {
+  .carousel-arrow { width: 34px; height: 34px; font-size: 1.3rem; }
+  .product-card.square { min-width: 64vw; max-width: 73vw; }
+  .carousel-wrapper { padding: 1.2rem 0 2rem 0; }
+}
+
+.product-card.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 16px 0 rgba(44,44,44,0.07);
+  overflow: hidden;
+  min-width: 340px;
+  max-width: 380px;
+  width: 370px;
+  margin: 0 1.5rem;
+  transition: box-shadow 0.22s, transform 0.22s;
+  border: none;
+}
+
+.product-card.vertical:hover {
+  box-shadow: 0 8px 28px 0 rgba(110,24,34,0.13);
+  transform: translateY(-5px) scale(1.022);
+}
+
+.product-card.vertical .product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1.18; /* cuadrado vertical */
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-card.vertical .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.product-card.vertical .product-content {
+  padding: 1.3rem 0.7rem 0.8rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.product-card.vertical .product-content h3 {
+  font-size: 1.14rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem 0;
+  color: #262626;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.product-card.vertical .price {
+  font-size: 1.03rem;
+  color: #212121;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .product-card.vertical {
+    min-width: 70vw;
+    max-width: 98vw;
+    width: 94vw;
+    margin: 0 0.5rem;
+  }
+  .product-card.vertical .product-content {
+    padding: 1.05rem 0.5rem 0.7rem 0.5rem;
+  }
+}
+
+
 
 @keyframes scroll-left {
   0% {

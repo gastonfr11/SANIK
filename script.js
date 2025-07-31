@@ -39,5 +39,50 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   reveals.forEach(el => observer.observe(el));
+  document.querySelectorAll('.submenu-header').forEach(header => {
+  header.addEventListener('click', function(e) {
+    // Expandir/cerrar con flecha
+    if (e.target.classList.contains('submenu-arrow')) {
+      this.parentElement.classList.toggle('open');
+    } else {
+      // Click en texto de colección = va a la colección
+      window.location.href = this.getAttribute('data-link');
+    }
+  });
+});
+
+document.querySelectorAll('.carousel-arrow').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const track = this.closest('.carousel-wrapper').querySelector('.carousel-track-horizontal');
+    const card = track.querySelector('.product-card');
+    if (!card) return;
+    const cardWidth = card.offsetWidth + 20; // gap
+    track.scrollBy({ 
+      left: (this.classList.contains('right') ? cardWidth : -cardWidth), 
+      behavior: 'smooth' 
+    });
+  });
+});
+
+// Opcional: drag para mobile/pc (UX tipo Shopify)
+const track = document.querySelector('.carousel-track-horizontal');
+if (track) {
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true; track.classList.add('dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
+  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('dragging'); });
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    track.scrollLeft = scrollLeft - walk;
+  });
+}
+
 });
 

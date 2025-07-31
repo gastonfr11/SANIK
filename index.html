@@ -17,11 +17,35 @@
         <li><a href="#about">About Us</a></li>
       </ul>
       <ul class="nav-links">
-        <li><a href="prenda.html">Prenda 1</a></li>
-        <li><a href="prenda.html">Prenda 2</a></li>
-        <li><a href="prenda.html">Prenda 3</a></li>
-        <li><a href="prenda.html">Prenda 4</a></li>
-        <li><a href="prenda.html">Prenda 5</a></li>
+        <li>
+          <a href="new-arrivals.html" class="menu-link">NEW ARRIVALS</a>
+        </li>
+        <!-- Colección 1 -->
+        <li class="has-submenu">
+          <div class="submenu-header" data-link="coleccion1.html">
+            <span>Colección Urban</span>
+            <span class="submenu-arrow">&#9662;</span>
+          </div>
+          <ul class="submenu">
+            <li><a href="prenda-urban-1.html">Remera Oversize Urban</a></li>
+            <li><a href="prenda-urban-2.html">Jogger Premium Urban</a></li>
+          </ul>
+        </li>
+        <!-- Colección 2 -->
+        <li class="has-submenu">
+          <div class="submenu-header" data-link="coleccion2.html">
+            <span>Colección Street</span>
+            <span class="submenu-arrow">&#9662;</span>
+          </div>
+          <ul class="submenu">
+            <li><a href="prenda-street-1.html">Buzo Streetwear</a></li>
+            <li><a href="prenda-street-2.html">Cargo Pants Street</a></li>
+            <li><a href="prenda-street-3.html">Remera Street</a></li>
+          </ul>
+        </li>
+        <li class="menu-item preventa">
+          <a href="preventa.html" class="menu-link">PREVENTA</a>
+        </li>
       </ul>
       <button class="nav-toggle" aria-label="Abrir menú">
         ☰
@@ -43,112 +67,90 @@
   <!-- PRODUCTS (ejemplo) -->
  <section id="products" class="products reveal">
   <h2 class="carousel-title">Productos Destacados</h2>
-    <div class="product-carousel">
-      <div class="carousel-track">
-        <!-- Repetí cada producto para dar sensación de infinito (al menos 2 veces si son pocos) -->
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
-          </div>
-          <div class="product-content">
-            <h3>Conjunto</h3>
-            <p class="price">$49.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda1.jpg" alt="prenda1">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda2.jpg" alt="prenda2">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda3.jpg" alt="prenda3">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <!-- Copiá los productos aquí de nuevo para loop infinito -->
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
-          </div>
-          <div class="product-content">
-            <h3>Conjunto</h3>
-            <p class="price">$49.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda1.jpg" alt="prenda1">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda2.jpg" alt="prenda2">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-        <article class="product-card square">
-          <div class="product-image">
-            <img src="assets/imagenes/prenda3.jpg" alt="prenda3">
-          </div>
-          <div class="product-content">
-            <h3>Remera Clásica</h3>
-            <p class="price">$29.99 USD</p>
-            <a href="#" class="btn">Comprar</a>
-          </div>
-        </article>
-      </div>
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow left" aria-label="Anterior">&#8592;</button>
+    <div class="carousel-track-horizontal">
+      <!-- PRODUCTOS -->
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+      <article class="product-card vertical">
+        <div class="product-image">
+          <img src="assets/imagenes/conjunto1.jpg" alt="Conjunto1">
+        </div>
+        <div class="product-content">
+          <h3>Remera Clásica</h3>
+          <p class="price">$3.195,00 UYU</p>
+        </div>
+      </article>
+      <!-- Agregá más productos como siempre... -->
     </div>
+    <button class="carousel-arrow right" aria-label="Siguiente">&#8594;</button>
+  </div>
 </section>
 
 <!-- ABOUT US -->
 <section id="about" class="about-us reveal">
-  <div class="container">
-    <h2>About Us</h2>
-    <div class="about-content">
+  <div class="about-container">
+    <div class="about-logo-wrap">
       <img src="assets/imagenes/sanik.png" alt="Logo Sanik" class="about-logo">
-      <div class="about-text">
-        <p>
-          Desde el diseño de nuestras piezas hasta la manera en que
-          comunicamos, todo responde a un propósito: crear un universo
-          visual y emocional donde las prendas no sea una fórmula,
-          sino una expresión libre e icónica, porque no pretende
-          agradar a todos, distinta porque nunca sigue el camino fácil
-        </p>
-      </div>
+    </div>
+    <div class="about-text-wrap">
+      <h2>About Us</h2>
+      <p>
+        Desde el diseño de nuestras piezas hasta la manera en que
+        comunicamos, todo responde a un propósito: crear un universo
+        visual y emocional donde las prendas no sean una fórmula,
+        sino una expresión libre e icónica, porque no pretende
+        agradar a todos, distinta porque nunca sigue el camino fácil.
+      </p>
     </div>
   </div>
 </section>
+
 
 
 

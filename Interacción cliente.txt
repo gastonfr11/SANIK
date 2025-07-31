@@ -14,3 +14,28 @@ mucha animacion con javascript
 
 Primera Iteración : front como catalogo
 Segunda Iteración: Integrar pagos
+
+https://whynotbasics.com.uy/products/panuelo-gotic
+ABOUT US: 
+	Logo horizontal, texto a la derecha
+	Más bajo
+
+NAV BAR:
+	New Arrivals
+	Colecciones que se expanda y muestre todas las prendas hacia abajo
+	Preventa
+
+COLECCION:
+	prenda destacada con concepto y abajo el resto de forma lineal
+	cambiar frase por nombre de coleccion
+
+PRENDA INDIVIDUAL: 
+	como whynotbasics
+
+PRODUCTOS DESTACADOS:
+	igual a whynotbasics
+
+CATALOGO:
+	igual a whynotbasics
+
+
