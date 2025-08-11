@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sanik</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/imagenes/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo">STAND OUT<wbr> WHEREVER<wbr> YOU<wbr> GO</a>
+
+      <!-- Menú principal (estático + dinámico) -->
+      <ul class="nav-options">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+
+      <!-- Colecciones desde API -->
+      <ul class="nav-links" id="collections-menu">
+        <!-- Se rellena con js/navbar.js:
+             <li><a href="coleccion.html?c=street-aw24">STREET AW24</a></li> -->
+      </ul>
+
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header id="home" class="hero">
+    <video class="hero-video" src="assets/videos/855563-hd_1920_1080_24fps.mp4" autoplay muted loop playsinline></video>
+    <div class="container hero-content">
+      <img src="assets/imagenes/sanik.png" alt="SANIK STYLE" class="hero-logo" />
+      <a href="catalogo.html" class="btn hero-btn">SHOP NOW</a>
+    </div>
+  </header>
+
+  <!-- PRODUCTS DESTACADOS -->
+  <section id="products" class="products reveal">
+    <h2 class="carousel-title">Productos Destacados</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow left" aria-label="Anterior" id="feat-prev">&#8592;</button>
+      <div class="carousel-track-horizontal" id="featured-track">
+        <!-- Se rellena con js/home.js usando /api/products?take=12 -->
+      </div>
+      <button class="carousel-arrow right" aria-label="Siguiente" id="feat-next">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about" class="about-us reveal">
+    <div class="about-container">
+      <div class="about-logo-wrap">
+        <img src="assets/imagenes/sanik.png" alt="Logo Sanik" class="about-logo" />
+      </div>
+      <div class="about-text-wrap">
+        <h2>About Us</h2>
+        <p>
+          Desde el diseño de nuestras piezas hasta la manera en que comunicamos, todo responde a un propósito:
+          crear un universo visual y emocional donde las prendas no sean una fórmula, sino una expresión libre e icónica,
+          porque no pretende agradar a todos, distinta porque nunca sigue el camino fácil.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="container footer-content">
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contacto</a>
+      </div>
+      <div class="social-media">
+        <a href="https://www.instagram.com/sanikstyle/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="copyright">
+        &copy; 2025 SANIK STYLE. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Contact bar lateral -->
+  <div class="contact-bar">
+    <input type="checkbox" id="contact-toggle" />
+    <label for="contact-toggle" class="contact-btn" title="Contacto">☰</label>
+    <div class="social-buttons contact-items">
+      <a href="https://wa.me/59899123456" class="social-button whatsapp" target="_blank" rel="noopener" title="WhatsApp">…</a>
+      <a href="mailto:info@sanikstyle.com.uy" class="social-button mail" target="_blank" rel="noopener" title="Mail">…</a>
+      <a href="https://facebook.com/sanikstyle" class="social-button facebook" target="_blank" rel="noopener" title="Facebook">…</a>
+      <a href="https://instagram.com/sanikstyle" class="social-button instagram" target="_blank" rel="noopener" title="Instagram">…</a>
+    </div>
+  </div>
+
+  <!-- Cierre contact bar si clickeás afuera -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var checkbox = document.getElementById('contact-toggle');
+      var contactBar = document.querySelector('.contact-bar');
+      function closeIfClickedOutside(e) {
+        if (checkbox.checked && !contactBar.contains(e.target)) checkbox.checked = false;
+      }
+      document.addEventListener('mousedown', closeIfClickedOutside);
+      document.addEventListener('touchstart', closeIfClickedOutside);
+    });
+  </script>
+
+  <!-- Módulos front -->
+  <script src="script.js"></script>
+  <script type="module">
+    import "./js/navbar.js";
+    import "./js/home.js";
+  </script>
+</body>
+</html>

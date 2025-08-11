@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de Producto | SANIK STYLE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/imagenes/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" id="logo">STAND OUT<wbr> WHEREVER<wbr> YOU<wbr> GO</a>
+
+      <ul class="nav-options">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+
+      <!-- Colecciones desde la API -->
+      <ul class="nav-links" id="collections-menu"></ul>
+
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </nav>
+
+  <!-- PRODUCT DETAIL -->
+  <main>
+    <section class="product-detail">
+      <div class="container product-container">
+        <!-- Galería dinámica -->
+        <div id="product" class="product-detail-root">
+          <!-- js/product.js inyecta:
+               - galería (imagen principal + thumbs)
+               - título, precio (UYU), descripción
+               - select de variantes (si hay)
+               - botón "Agregar al carrito" (demo)
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact bar -->
+  <div class="contact-bar">
+    <input type="checkbox" id="contact-toggle" />
+    <label for="contact-toggle" class="contact-btn" title="Contacto">☰</label>
+    <div class="social-buttons contact-items">
+      <a href="https://wa.me/59899123456" class="social-button whatsapp" target="_blank" rel="noopener" title="WhatsApp">…</a>
+      <a href="mailto:info@sanikstyle.com.uy" class="social-button mail" target="_blank" rel="noopener" title="Mail">…</a>
+      <a href="https://facebook.com/sanikstyle" class="social-button facebook" target="_blank" rel="noopener" title="Facebook">…</a>
+      <a href="https://instagram.com/sanikstyle" class="social-button instagram" target="_blank" rel="noopener" title="Instagram">…</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="container footer-content">
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contacto</a>
+      </div>
+      <div class="social-media">
+        <a href="https://www.instagram.com/sanikstyle/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="copyright">
+        &copy; 2025 SANIK STYLE. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Cerrar contact bar si clic afuera -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkbox = document.getElementById('contact-toggle');
+      const bar = document.querySelector('.contact-bar');
+      function closeIfOutside(e){ if(checkbox.checked && !bar.contains(e.target)) checkbox.checked = false; }
+      document.addEventListener('mousedown', closeIfOutside);
+      document.addEventListener('touchstart', closeIfOutside, { passive: true });
+    });
+  </script>
+
+  <!-- Módulos front -->
+   <script src="script.js"></script>
+  <script type="module">
+    import "./js/navbar.js";
+    import "./js/product.js";
+  </script>
+</body>
+</html>
