@@ -229,8 +229,10 @@ const DATA = [
       name: 'CROSS OUT TOP',
       priceUYU: '1.890,00', 
       description: 'un look que evoca personalidad junto con lafuerza del estampado cow.',
-      coverImage: 'assets/imagenes/COW1.JPG',
+      coverImage: 'assets/imagenes/CROSS1.JPG',
       images: [
+        { url: 'assets/imagenes/CROSS2.jpg', alt: 'hover' },
+        { url: 'assets/imagenes/CROSS3.jpg', alt: 'cover' },
       ],
       variants: [
         { size: 'XS', color: 'Black', stock: 0 },
@@ -252,8 +254,12 @@ const DATA = [
       name: 'STAR MOOD TOP',
       priceUYU: '1.890,00', 
       description: 'un look que evoca personalidad junto con lafuerza del estampado cow.',
-      coverImage: 'assets/imagenes/COW1.JPG',
+      coverImage: 'assets/imagenes/STAR1.JPG',
       images: [
+        { url: 'assets/imagenes/STAR2.jpg', alt: 'hover' },
+        { url: 'assets/imagenes/STAR3.jpg', alt: 'cover' },
+        { url: 'assets/imagenes/STAR4.jpg', alt: 'cover' },
+        { url: 'assets/imagenes/STAR5.jpg', alt: 'cover' },
       ],
       variants: [
         { size: 'XS', color: 'Black', stock: 0 },
